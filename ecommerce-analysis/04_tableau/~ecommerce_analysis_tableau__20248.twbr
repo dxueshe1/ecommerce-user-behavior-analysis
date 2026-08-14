@@ -1,0 +1,2570 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0410.0924                               -->
+<workbook original-version='18.1' source-build='2026.1.1 (20261.26.0410.0924)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <ParameterAction />
+    <ParameterActionClearSelection />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='ColorStart' datatype='integer' name='[ColorStart]' param-domain-type='any' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+      </column>
+    </datasource>
+    <datasource caption='星期x小时用户会话量' inline='true' name='federated.1jgyc5n170m2mn1d5jyc718p0wft' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='local' name='duckdb_jdbc.15360xf0c7xyxn16on4p21ns9dwu'>
+            <connection authentication='auth-none' class='duckdb_jdbc' dbname='ecommerce' initialSQL='' one-time-sql='' schema='main' server='local' v-connection_string_file='E:\duckdb\data\ecommerce.duckdb' v-connection_string_md='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='duckdb_jdbc.15360xf0c7xyxn16on4p21ns9dwu' name='星期x小时用户会话量' table='[ecommerce].[main].[星期x小时用户会话量]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>day_of_week</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_of_week]</local-name>
+            <parent-name>[星期x小时用户会话量]</parent-name>
+            <remote-alias>day_of_week</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[星期x小时用户会话量_34F112DFAEF74E6488F51BB325475CBB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_hour</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[event_hour]</local-name>
+            <parent-name>[星期x小时用户会话量]</parent-name>
+            <remote-alias>event_hour</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[星期x小时用户会话量_34F112DFAEF74E6488F51BB325475CBB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sum_event_count</remote-name>
+            <remote-type>1</remote-type>
+            <local-name>[sum_event_count]</local-name>
+            <parent-name>[星期x小时用户会话量]</parent-name>
+            <remote-alias>sum_event_count</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>128</width>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;HUGEINT&quot;</attribute>
+            </attributes>
+            <object-id>[星期x小时用户会话量_34F112DFAEF74E6488F51BB325475CBB]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='星期x小时用户会话量' datatype='table' name='[__tableau_internal_object_id__].[星期x小时用户会话量_34F112DFAEF74E6488F51BB325475CBB]' role='measure' type='quantitative' />
+      <column caption='Day Of Week' datatype='string' name='[day_of_week]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Event Hour' datatype='integer' name='[event_hour]' role='dimension' type='ordinal' />
+      <column aggregation='CountD' datatype='integer' datatype-customized='true' name='[sum_event_count]' role='measure' type='quantitative' />
+      <column-instance column='[sum_event_count]' derivation='CountD' name='[ctd:sum_event_count:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[sum_event_count]' derivation='Sum' name='[sum:sum_event_count:ok]' pivot='key' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='zh_CN' class='hyper' dbname='E:/Project/ecommerce-analysis/04_tableau/hyper/天x小时用户会话量+ (main).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/12/2026 06:42:53 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='星期x小时用户会话量' increment-value='%null%' refresh-type='create' rows-inserted='168' timestamp-start='2026-08-12 06:42:52.978' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>day_of_week</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_of_week]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>day_of_week</remote-alias>
+              <ordinal>0</ordinal>
+              <family>星期x小时用户会话量</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LROOT' />
+              <object-id>[星期x小时用户会话量_34F112DFAEF74E6488F51BB325475CBB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>event_hour</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[event_hour]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>event_hour</remote-alias>
+              <ordinal>1</ordinal>
+              <family>星期x小时用户会话量</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[星期x小时用户会话量_34F112DFAEF74E6488F51BB325475CBB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sum_event_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[sum_event_count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sum_event_count</remote-alias>
+              <ordinal>2</ordinal>
+              <family>星期x小时用户会话量</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>168</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[星期x小时用户会话量_34F112DFAEF74E6488F51BB325475CBB]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[ctd:sum_event_count:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[sum:sum_event_count:ok]' palette='orange_10_0' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#9e3d22'>
+              <bucket>3825921</bucket>
+            </map>
+            <map to='#9f3d22'>
+              <bucket>3810584</bucket>
+            </map>
+            <map to='#a03e22'>
+              <bucket>3784890</bucket>
+            </map>
+            <map to='#a13e22'>
+              <bucket>3743651</bucket>
+            </map>
+            <map to='#a23f22'>
+              <bucket>3724448</bucket>
+            </map>
+            <map to='#a33f22'>
+              <bucket>3721713</bucket>
+            </map>
+            <map to='#a44022'>
+              <bucket>3718877</bucket>
+            </map>
+            <map to='#a54022'>
+              <bucket>3681658</bucket>
+            </map>
+            <map to='#a64122'>
+              <bucket>3680339</bucket>
+            </map>
+            <map to='#a74122'>
+              <bucket>3677917</bucket>
+            </map>
+            <map to='#a84222'>
+              <bucket>3669730</bucket>
+            </map>
+            <map to='#a94222'>
+              <bucket>3634326</bucket>
+            </map>
+            <map to='#aa4322'>
+              <bucket>3628933</bucket>
+            </map>
+            <map to='#ab4422'>
+              <bucket>3580873</bucket>
+            </map>
+            <map to='#ac4422'>
+              <bucket>3535820</bucket>
+            </map>
+            <map to='#ad4522'>
+              <bucket>3521117</bucket>
+            </map>
+            <map to='#ae4522'>
+              <bucket>3517860</bucket>
+            </map>
+            <map to='#af4623'>
+              <bucket>3517761</bucket>
+            </map>
+            <map to='#b04623'>
+              <bucket>3496019</bucket>
+            </map>
+            <map to='#b14723'>
+              <bucket>3481144</bucket>
+            </map>
+            <map to='#b24723'>
+              <bucket>3475136</bucket>
+            </map>
+            <map to='#b34823'>
+              <bucket>3472306</bucket>
+            </map>
+            <map to='#b44823'>
+              <bucket>3380710</bucket>
+            </map>
+            <map to='#b54923'>
+              <bucket>3368516</bucket>
+            </map>
+            <map to='#b64923'>
+              <bucket>3356852</bucket>
+            </map>
+            <map to='#b74a23'>
+              <bucket>3354674</bucket>
+            </map>
+            <map to='#b84b23'>
+              <bucket>3352097</bucket>
+            </map>
+            <map to='#b94b23'>
+              <bucket>3351224</bucket>
+            </map>
+            <map to='#ba4c23'>
+              <bucket>3348580</bucket>
+            </map>
+            <map to='#bb4c23'>
+              <bucket>3338208</bucket>
+            </map>
+            <map to='#bc4d23'>
+              <bucket>3322474</bucket>
+            </map>
+            <map to='#bd4d23'>
+              <bucket>3314597</bucket>
+            </map>
+            <map to='#be4e23'>
+              <bucket>3312707</bucket>
+            </map>
+            <map to='#bf4e23'>
+              <bucket>3308634</bucket>
+            </map>
+            <map to='#c04f22'>
+              <bucket>3264426</bucket>
+            </map>
+            <map to='#c14f22'>
+              <bucket>3210796</bucket>
+            </map>
+            <map to='#c25022'>
+              <bucket>3198359</bucket>
+            </map>
+            <map to='#c35022'>
+              <bucket>3197074</bucket>
+            </map>
+            <map to='#c45122'>
+              <bucket>3187211</bucket>
+            </map>
+            <map to='#c55222'>
+              <bucket>3151062</bucket>
+            </map>
+            <map to='#c65222'>
+              <bucket>3144823</bucket>
+            </map>
+            <map to='#c75322'>
+              <bucket>3121393</bucket>
+            </map>
+            <map to='#c85322'>
+              <bucket>3115702</bucket>
+            </map>
+            <map to='#c95422'>
+              <bucket>3088018</bucket>
+            </map>
+            <map to='#ca5422'>
+              <bucket>3082514</bucket>
+            </map>
+            <map to='#cb5522'>
+              <bucket>3077352</bucket>
+            </map>
+            <map to='#cc5522'>
+              <bucket>3072418</bucket>
+            </map>
+            <map to='#cd5622'>
+              <bucket>3063812</bucket>
+            </map>
+            <map to='#cd5622'>
+              <bucket>3069988</bucket>
+            </map>
+            <map to='#ce5722'>
+              <bucket>3061653</bucket>
+            </map>
+            <map to='#cf5722'>
+              <bucket>3052345</bucket>
+            </map>
+            <map to='#d05821'>
+              <bucket>3040264</bucket>
+            </map>
+            <map to='#d15921'>
+              <bucket>3032683</bucket>
+            </map>
+            <map to='#d25921'>
+              <bucket>3032582</bucket>
+            </map>
+            <map to='#d35a21'>
+              <bucket>3029761</bucket>
+            </map>
+            <map to='#d45a21'>
+              <bucket>3026615</bucket>
+            </map>
+            <map to='#d65b21'>
+              <bucket>3013705</bucket>
+            </map>
+            <map to='#d75c21'>
+              <bucket>3012812</bucket>
+            </map>
+            <map to='#d85c21'>
+              <bucket>3007016</bucket>
+            </map>
+            <map to='#d95d20'>
+              <bucket>2996346</bucket>
+            </map>
+            <map to='#da5d20'>
+              <bucket>2984345</bucket>
+            </map>
+            <map to='#db5e20'>
+              <bucket>2983209</bucket>
+            </map>
+            <map to='#dc5f20'>
+              <bucket>2978185</bucket>
+            </map>
+            <map to='#dd5f20'>
+              <bucket>2974124</bucket>
+            </map>
+            <map to='#de6020'>
+              <bucket>2971205</bucket>
+            </map>
+            <map to='#df6020'>
+              <bucket>2968225</bucket>
+            </map>
+            <map to='#e06120'>
+              <bucket>2955308</bucket>
+            </map>
+            <map to='#e16220'>
+              <bucket>2929638</bucket>
+            </map>
+            <map to='#e16220'>
+              <bucket>2949424</bucket>
+            </map>
+            <map to='#e26320'>
+              <bucket>2897043</bucket>
+            </map>
+            <map to='#e36420'>
+              <bucket>2895822</bucket>
+            </map>
+            <map to='#e46520'>
+              <bucket>2891902</bucket>
+            </map>
+            <map to='#e46620'>
+              <bucket>2879559</bucket>
+            </map>
+            <map to='#e56620'>
+              <bucket>2879505</bucket>
+            </map>
+            <map to='#e66720'>
+              <bucket>2878406</bucket>
+            </map>
+            <map to='#e66820'>
+              <bucket>2876299</bucket>
+            </map>
+            <map to='#e76920'>
+              <bucket>2875499</bucket>
+            </map>
+            <map to='#e86920'>
+              <bucket>2874220</bucket>
+            </map>
+            <map to='#e96a20'>
+              <bucket>2873485</bucket>
+            </map>
+            <map to='#e96b20'>
+              <bucket>2862975</bucket>
+            </map>
+            <map to='#ea6c20'>
+              <bucket>2845060</bucket>
+            </map>
+            <map to='#eb6d20'>
+              <bucket>2839932</bucket>
+            </map>
+            <map to='#eb6d20'>
+              <bucket>2843619</bucket>
+            </map>
+            <map to='#ec6e20'>
+              <bucket>2825883</bucket>
+            </map>
+            <map to='#ed6f20'>
+              <bucket>2815924</bucket>
+            </map>
+            <map to='#ed7020'>
+              <bucket>2811580</bucket>
+            </map>
+            <map to='#ed7121'>
+              <bucket>2807431</bucket>
+            </map>
+            <map to='#ee7222'>
+              <bucket>2802949</bucket>
+            </map>
+            <map to='#ee7422'>
+              <bucket>2783982</bucket>
+            </map>
+            <map to='#ee7523'>
+              <bucket>2781123</bucket>
+            </map>
+            <map to='#ee7623'>
+              <bucket>2768193</bucket>
+            </map>
+            <map to='#ef7724'>
+              <bucket>2766879</bucket>
+            </map>
+            <map to='#ef7825'>
+              <bucket>2737099</bucket>
+            </map>
+            <map to='#ef7925'>
+              <bucket>2697843</bucket>
+            </map>
+            <map to='#f07a26'>
+              <bucket>2664459</bucket>
+            </map>
+            <map to='#f07c26'>
+              <bucket>2660104</bucket>
+            </map>
+            <map to='#f07d27'>
+              <bucket>2635569</bucket>
+            </map>
+            <map to='#f17e28'>
+              <bucket>2545332</bucket>
+            </map>
+            <map to='#f17f28'>
+              <bucket>2467032</bucket>
+            </map>
+            <map to='#f18029'>
+              <bucket>2453308</bucket>
+            </map>
+            <map to='#f18129'>
+              <bucket>2369440</bucket>
+            </map>
+            <map to='#f2822a'>
+              <bucket>2310734</bucket>
+            </map>
+            <map to='#f2842b'>
+              <bucket>2307043</bucket>
+            </map>
+            <map to='#f2852c'>
+              <bucket>2305079</bucket>
+            </map>
+            <map to='#f2862c'>
+              <bucket>2268325</bucket>
+            </map>
+            <map to='#f2872d'>
+              <bucket>2189772</bucket>
+            </map>
+            <map to='#f3882e'>
+              <bucket>2051097</bucket>
+            </map>
+            <map to='#f3892e'>
+              <bucket>2001934</bucket>
+            </map>
+            <map to='#f38a2f'>
+              <bucket>1978616</bucket>
+            </map>
+            <map to='#f38c30'>
+              <bucket>1895895</bucket>
+            </map>
+            <map to='#f38d31'>
+              <bucket>1880631</bucket>
+            </map>
+            <map to='#f38e31'>
+              <bucket>1839632</bucket>
+            </map>
+            <map to='#f48f32'>
+              <bucket>1829434</bucket>
+            </map>
+            <map to='#f49033'>
+              <bucket>1815505</bucket>
+            </map>
+            <map to='#f49133'>
+              <bucket>1781917</bucket>
+            </map>
+            <map to='#f49234'>
+              <bucket>1773435</bucket>
+            </map>
+            <map to='#f49335'>
+              <bucket>1773433</bucket>
+            </map>
+            <map to='#f59536'>
+              <bucket>1752612</bucket>
+            </map>
+            <map to='#f59637'>
+              <bucket>1704233</bucket>
+            </map>
+            <map to='#f59738'>
+              <bucket>1351104</bucket>
+            </map>
+            <map to='#f59839'>
+              <bucket>1324903</bucket>
+            </map>
+            <map to='#f5993a'>
+              <bucket>1297406</bucket>
+            </map>
+            <map to='#f59a3b'>
+              <bucket>1258890</bucket>
+            </map>
+            <map to='#f59b3c'>
+              <bucket>1251522</bucket>
+            </map>
+            <map to='#f59d3d'>
+              <bucket>1216521</bucket>
+            </map>
+            <map to='#f59e3e'>
+              <bucket>1165526</bucket>
+            </map>
+            <map to='#f59f3f'>
+              <bucket>1164428</bucket>
+            </map>
+            <map to='#f5a040'>
+              <bucket>1152032</bucket>
+            </map>
+            <map to='#f5a141'>
+              <bucket>1147860</bucket>
+            </map>
+            <map to='#f5a242'>
+              <bucket>1122745</bucket>
+            </map>
+            <map to='#f5a343'>
+              <bucket>1104113</bucket>
+            </map>
+            <map to='#f5a544'>
+              <bucket>1063108</bucket>
+            </map>
+            <map to='#f5a645'>
+              <bucket>1062316</bucket>
+            </map>
+            <map to='#f5a746'>
+              <bucket>797243</bucket>
+            </map>
+            <map to='#f5a847'>
+              <bucket>762568</bucket>
+            </map>
+            <map to='#f5a949'>
+              <bucket>758872</bucket>
+            </map>
+            <map to='#f5aa4b'>
+              <bucket>737518</bucket>
+            </map>
+            <map to='#f6ab4d'>
+              <bucket>715442</bucket>
+            </map>
+            <map to='#f6ab4f'>
+              <bucket>689720</bucket>
+            </map>
+            <map to='#f6ac51'>
+              <bucket>662375</bucket>
+            </map>
+            <map to='#f6ad53'>
+              <bucket>657650</bucket>
+            </map>
+            <map to='#f7ae55'>
+              <bucket>633013</bucket>
+            </map>
+            <map to='#f7af57'>
+              <bucket>625779</bucket>
+            </map>
+            <map to='#f7b059'>
+              <bucket>614028</bucket>
+            </map>
+            <map to='#f8b15a'>
+              <bucket>597939</bucket>
+            </map>
+            <map to='#f8b25c'>
+              <bucket>596440</bucket>
+            </map>
+            <map to='#f8b35e'>
+              <bucket>568289</bucket>
+            </map>
+            <map to='#f9b460'>
+              <bucket>507991</bucket>
+            </map>
+            <map to='#f9b462'>
+              <bucket>499624</bucket>
+            </map>
+            <map to='#f9b564'>
+              <bucket>496948</bucket>
+            </map>
+            <map to='#f9b666'>
+              <bucket>452334</bucket>
+            </map>
+            <map to='#fab768'>
+              <bucket>450267</bucket>
+            </map>
+            <map to='#fab86a'>
+              <bucket>447380</bucket>
+            </map>
+            <map to='#fab96b'>
+              <bucket>428989</bucket>
+            </map>
+            <map to='#fbba6d'>
+              <bucket>424984</bucket>
+            </map>
+            <map to='#fbbb6f'>
+              <bucket>416817</bucket>
+            </map>
+            <map to='#fbbc71'>
+              <bucket>403411</bucket>
+            </map>
+            <map to='#fcbd73'>
+              <bucket>393155</bucket>
+            </map>
+            <map to='#fcbd74'>
+              <bucket>392011</bucket>
+            </map>
+            <map to='#fcbe76'>
+              <bucket>386957</bucket>
+            </map>
+            <map to='#fcbf78'>
+              <bucket>380594</bucket>
+            </map>
+            <map to='#fdc07a'>
+              <bucket>375002</bucket>
+            </map>
+            <map to='#fdc17c'>
+              <bucket>367187</bucket>
+            </map>
+            <map to='#fdc27d'>
+              <bucket>348978</bucket>
+            </map>
+            <map to='#fec37f'>
+              <bucket>347576</bucket>
+            </map>
+            <map to='#fec481'>
+              <bucket>343098</bucket>
+            </map>
+            <map to='#fec583'>
+              <bucket>338498</bucket>
+            </map>
+            <map to='#ffc685'>
+              <bucket>324136</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='星期x小时用户会话量' id='星期x小时用户会话量_34F112DFAEF74E6488F51BB325475CBB'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.15360xf0c7xyxn16on4p21ns9dwu' name='星期x小时用户会话量' table='[ecommerce].[main].[星期x小时用户会话量]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='每日活跃用户数+ (main)' inline='true' name='federated.1dr8xyu0wgdm1e1gfp5d50wrosei' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='local' name='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf'>
+            <connection authentication='auth-none' class='duckdb_jdbc' dbname='ecommerce' initialSQL='' one-time-sql='' schema='main' server='local' v-connection_string_file='E:\duckdb\data\ecommerce.duckdb' v-connection_string_md='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf' name='每日活跃用户数' table='[ecommerce].[main].[每日活跃用户数]' type='table' />
+          <relation connection='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf' name='每日新增用户数' table='[ecommerce].[main].[每日新增用户数]' type='table' />
+          <relation connection='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf' name='每日用户行为趋势' table='[ecommerce].[main].[每日用户行为趋势]' type='table' />
+          <relation connection='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf' name='每日用户趋势' table='[ecommerce].[main].[每日用户趋势]' type='table' />
+        </relation>
+        <cols>
+          <map key='[DAU]' value='[每日用户趋势].[DAU]' />
+          <map key='[cart_count]' value='[每日用户行为趋势].[cart_count]' />
+          <map key='[event_day (每日活跃用户数)]' value='[每日活跃用户数].[event_day]' />
+          <map key='[event_day (每日用户趋势)]' value='[每日用户趋势].[event_day]' />
+          <map key='[event_day]' value='[每日用户行为趋势].[event_day]' />
+          <map key='[first_time]' value='[每日新增用户数].[first_time]' />
+          <map key='[new_user (每日用户趋势)]' value='[每日用户趋势].[new_user]' />
+          <map key='[new_user]' value='[每日新增用户数].[new_user]' />
+          <map key='[old_user]' value='[每日用户趋势].[old_user]' />
+          <map key='[purchase_count]' value='[每日用户行为趋势].[purchase_count]' />
+          <map key='[user_count]' value='[每日活跃用户数].[user_count]' />
+          <map key='[view_count]' value='[每日用户行为趋势].[view_count]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>event_day</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[event_day (每日活跃用户数)]</local-name>
+            <parent-name>[每日活跃用户数]</parent-name>
+            <remote-alias>event_day</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_count]</local-name>
+            <parent-name>[每日活跃用户数]</parent-name>
+            <remote-alias>user_count</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first_time</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[first_time]</local-name>
+            <parent-name>[每日新增用户数]</parent-name>
+            <remote-alias>first_time</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>new_user</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[new_user]</local-name>
+            <parent-name>[每日新增用户数]</parent-name>
+            <remote-alias>new_user</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_day</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[event_day]</local-name>
+            <parent-name>[每日用户行为趋势]</parent-name>
+            <remote-alias>event_day</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>view_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[view_count]</local-name>
+            <parent-name>[每日用户行为趋势]</parent-name>
+            <remote-alias>view_count</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cart_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cart_count]</local-name>
+            <parent-name>[每日用户行为趋势]</parent-name>
+            <remote-alias>cart_count</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>purchase_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[purchase_count]</local-name>
+            <parent-name>[每日用户行为趋势]</parent-name>
+            <remote-alias>purchase_count</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_day</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[event_day (每日用户趋势)]</local-name>
+            <parent-name>[每日用户趋势]</parent-name>
+            <remote-alias>event_day</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DAU</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[DAU]</local-name>
+            <parent-name>[每日用户趋势]</parent-name>
+            <remote-alias>DAU</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>new_user</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[new_user (每日用户趋势)]</local-name>
+            <parent-name>[每日用户趋势]</parent-name>
+            <remote-alias>new_user</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>old_user</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[old_user]</local-name>
+            <parent-name>[每日用户趋势]</parent-name>
+            <remote-alias>old_user</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='每日新增用户数' datatype='table' name='[__tableau_internal_object_id__].[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]' role='measure' type='quantitative' />
+      <column caption='每日活跃用户数' datatype='table' name='[__tableau_internal_object_id__].[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]' role='measure' type='quantitative' />
+      <column caption='每日用户行为趋势' datatype='table' name='[__tableau_internal_object_id__].[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]' role='measure' type='quantitative' />
+      <column caption='每日用户趋势' datatype='table' name='[__tableau_internal_object_id__].[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]' role='measure' type='quantitative' />
+      <column caption='Cart Count' datatype='integer' name='[cart_count]' role='measure' type='quantitative' />
+      <column caption='Event Day (每日用户趋势)' datatype='date' name='[event_day (每日用户趋势)]' role='dimension' type='ordinal' />
+      <column caption='Event Day' datatype='date' name='[event_day]' role='dimension' type='ordinal' />
+      <column caption='First Time' datatype='date' name='[first_time]' role='dimension' type='ordinal' />
+      <column caption='New User (每日用户趋势)' datatype='integer' name='[new_user (每日用户趋势)]' role='measure' type='quantitative' />
+      <column caption='New User' datatype='integer' name='[new_user]' role='measure' type='quantitative' />
+      <column caption='Old User' datatype='integer' name='[old_user]' role='measure' type='quantitative' />
+      <column caption='Purchase Count' datatype='integer' name='[purchase_count]' role='measure' type='quantitative' />
+      <column caption='View Count' datatype='integer' name='[view_count]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='zh_CN' class='hyper' dbname='E:/Project/ecommerce-analysis/04_tableau/hyper/每日活跃用户数+ (main).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/14/2026 07:44:27 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2' table='[Extract].[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]' type='table' />
+            <relation name='每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8' table='[Extract].[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]' type='table' />
+            <relation name='每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8' table='[Extract].[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]' type='table' />
+            <relation name='每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF' table='[Extract].[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]' type='table' />
+          </relation>
+          <cols>
+            <map key='[DAU]' value='[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF].[DAU]' />
+            <map key='[cart_count]' value='[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8].[cart_count]' />
+            <map key='[event_day (每日活跃用户数)]' value='[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2].[event_day]' />
+            <map key='[event_day (每日用户趋势)]' value='[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF].[event_day]' />
+            <map key='[event_day]' value='[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8].[event_day]' />
+            <map key='[first_time]' value='[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8].[first_time]' />
+            <map key='[new_user (每日用户趋势)]' value='[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF].[new_user]' />
+            <map key='[new_user]' value='[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8].[new_user]' />
+            <map key='[old_user]' value='[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF].[old_user]' />
+            <map key='[purchase_count]' value='[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8].[purchase_count]' />
+            <map key='[user_count]' value='[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2].[user_count]' />
+            <map key='[view_count]' value='[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8].[view_count]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='每日活跃用户数+ (main)' increment-value='%null%' refresh-type='create' rows-inserted='852' timestamp-start='2026-08-14 07:44:27.646' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>event_day</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[event_day (每日活跃用户数)]</local-name>
+              <parent-name>[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]</parent-name>
+              <remote-alias>event_day</remote-alias>
+              <ordinal>0</ordinal>
+              <family>每日活跃用户数</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>user_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[user_count]</local-name>
+              <parent-name>[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]</parent-name>
+              <remote-alias>user_count</remote-alias>
+              <ordinal>1</ordinal>
+              <family>每日活跃用户数</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>first_time</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[first_time]</local-name>
+              <parent-name>[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]</parent-name>
+              <remote-alias>first_time</remote-alias>
+              <ordinal>2</ordinal>
+              <family>每日新增用户数</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>new_user</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[new_user]</local-name>
+              <parent-name>[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]</parent-name>
+              <remote-alias>new_user</remote-alias>
+              <ordinal>3</ordinal>
+              <family>每日新增用户数</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>event_day</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[event_day]</local-name>
+              <parent-name>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</parent-name>
+              <remote-alias>event_day</remote-alias>
+              <ordinal>4</ordinal>
+              <family>每日用户行为趋势</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>view_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[view_count]</local-name>
+              <parent-name>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</parent-name>
+              <remote-alias>view_count</remote-alias>
+              <ordinal>5</ordinal>
+              <family>每日用户行为趋势</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cart_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[cart_count]</local-name>
+              <parent-name>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</parent-name>
+              <remote-alias>cart_count</remote-alias>
+              <ordinal>6</ordinal>
+              <family>每日用户行为趋势</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>purchase_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[purchase_count]</local-name>
+              <parent-name>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</parent-name>
+              <remote-alias>purchase_count</remote-alias>
+              <ordinal>7</ordinal>
+              <family>每日用户行为趋势</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>212</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>event_day</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[event_day (每日用户趋势)]</local-name>
+              <parent-name>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</parent-name>
+              <remote-alias>event_day</remote-alias>
+              <ordinal>8</ordinal>
+              <family>每日用户趋势</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DAU</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DAU]</local-name>
+              <parent-name>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</parent-name>
+              <remote-alias>DAU</remote-alias>
+              <ordinal>9</ordinal>
+              <family>每日用户趋势</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>new_user</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[new_user (每日用户趋势)]</local-name>
+              <parent-name>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</parent-name>
+              <remote-alias>new_user</remote-alias>
+              <ordinal>10</ordinal>
+              <family>每日用户趋势</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>old_user</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[old_user]</local-name>
+              <parent-name>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</parent-name>
+              <remote-alias>old_user</remote-alias>
+              <ordinal>11</ordinal>
+              <family>每日用户趋势</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>213</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.930962' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.0690377' show-structure='true' user-set-layout-v2='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='每日新增用户数' id='每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf' name='每日新增用户数' table='[ecommerce].[main].[每日新增用户数]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8' table='[Extract].[每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8]' type='table' />
+            </properties>
+          </object>
+          <object caption='每日活跃用户数' id='每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf' name='每日活跃用户数' table='[ecommerce].[main].[每日活跃用户数]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2' table='[Extract].[每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2]' type='table' />
+            </properties>
+          </object>
+          <object caption='每日用户行为趋势' id='每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf' name='每日用户行为趋势' table='[ecommerce].[main].[每日用户行为趋势]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8' table='[Extract].[每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8]' type='table' />
+            </properties>
+          </object>
+          <object caption='每日用户趋势' id='每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.1bujc4p0ph0tzq14gig671h4vmsf' name='每日用户趋势' table='[ecommerce].[main].[每日用户趋势]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF' table='[Extract].[每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[event_day (每日活跃用户数)]' />
+              <expression op='[first_time]' />
+            </expression>
+            <first-end-point object-id='每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2' />
+            <second-end-point object-id='每日新增用户数_EA20A68C5DB0496A822FCD1D0B2D91C8' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[event_day (每日活跃用户数)]' />
+              <expression op='[event_day]' />
+            </expression>
+            <first-end-point object-id='每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2' />
+            <second-end-point object-id='每日用户行为趋势_82BBDF71910A44E89D5FF8D80AEB8FC8' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[event_day (每日活跃用户数)]' />
+              <expression op='[event_day (每日用户趋势)]' />
+            </expression>
+            <first-end-point object-id='每日活跃用户数_5FEC8B40D7874EC6AC0CD55BD64C21A2' />
+            <second-end-point object-id='每日用户趋势_34D8D81D8A164DD3A1D9CFC88F79E1EF' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+    <datasource caption='user_assort (main)' inline='true' name='federated.0wl339s1afsmhh16keg4y1oohu6f' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='local' name='duckdb_jdbc.05bsm8100dpg78134arf10ztwz8k'>
+            <connection authentication='auth-none' class='duckdb_jdbc' dbname='ecommerce' initialSQL='' one-time-sql='' schema='main' server='local' v-connection_string_file='E:\duckdb\data\ecommerce.duckdb' v-connection_string_md='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='duckdb_jdbc.05bsm8100dpg78134arf10ztwz8k' name='用户核心指标' table='[ecommerce].[main].[用户核心指标]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>user_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_count]</local-name>
+            <parent-name>[用户核心指标]</parent-name>
+            <remote-alias>user_count</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>session_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[session_count]</local-name>
+            <parent-name>[用户核心指标]</parent-name>
+            <remote-alias>session_count</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>session_ave</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[session_ave]</local-name>
+            <parent-name>[用户核心指标]</parent-name>
+            <remote-alias>session_ave</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_ave</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[event_ave]</local-name>
+            <parent-name>[用户核心指标]</parent-name>
+            <remote-alias>event_ave</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='用户核心指标' datatype='table' name='[__tableau_internal_object_id__].[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]' role='measure' type='quantitative' />
+      <column caption='Event Ave' datatype='real' name='[event_ave]' role='measure' type='quantitative' />
+      <column caption='Session Ave' datatype='real' name='[session_ave]' role='measure' type='quantitative' />
+      <column caption='Session Count' datatype='integer' name='[session_count]' role='measure' type='quantitative' />
+      <column caption='User Count' datatype='integer' name='[user_count]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='zh_CN' class='hyper' dbname='E:/Project/ecommerce-analysis/04_tableau/hyper/user_assort (main).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/10/2026 06:03:46 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='user_assort (main)' increment-value='%null%' refresh-type='create' rows-inserted='1' timestamp-start='2026-08-10 06:03:46.725' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>user_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[user_count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_count</remote-alias>
+              <ordinal>0</ordinal>
+              <family>用户核心指标</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>session_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[session_count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>session_count</remote-alias>
+              <ordinal>1</ordinal>
+              <family>用户核心指标</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>session_ave</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[session_ave]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>session_ave</remote-alias>
+              <ordinal>2</ordinal>
+              <family>用户核心指标</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>event_ave</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[event_ave]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>event_ave</remote-alias>
+              <ordinal>3</ordinal>
+              <family>用户核心指标</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='用户核心指标' id='用户核心指标_FE4FE0C3277242EEA4E25538BFF298E7'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.05bsm8100dpg78134arf10ztwz8k' name='用户核心指标' table='[ecommerce].[main].[用户核心指标]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='用户分类 (main)' inline='true' name='federated.1fyym8j1eqmcn21avuoa801ibtbj' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='local' name='duckdb_jdbc.161at8404jt4wb11vbtc20m3hvjj'>
+            <connection authentication='auth-none' class='duckdb_jdbc' dbname='ecommerce' initialSQL='' one-time-sql='' schema='main' server='local' v-connection_string_file='E:\duckdb\data\ecommerce.duckdb' v-connection_string_md='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='duckdb_jdbc.161at8404jt4wb11vbtc20m3hvjj' name='用户分类' table='[ecommerce].[main].[用户分类]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>user_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[user_type]</local-name>
+            <parent-name>[用户分类]</parent-name>
+            <remote-alias>user_type</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[用户分类_B4034B31A8DA420D884A058CC5F2AB1B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_scale</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_scale]</local-name>
+            <parent-name>[用户分类]</parent-name>
+            <remote-alias>user_scale</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户分类_B4034B31A8DA420D884A058CC5F2AB1B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='用户分类' datatype='table' name='[__tableau_internal_object_id__].[用户分类_B4034B31A8DA420D884A058CC5F2AB1B]' role='measure' type='quantitative' />
+      <column caption='User Scale' datatype='integer' name='[user_scale]' role='measure' type='quantitative' />
+      <column caption='User Type' datatype='string' name='[user_type]' role='dimension' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='zh_CN' class='hyper' dbname='E:/Project/ecommerce-analysis/04_tableau/hyper/用户分类 (main).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/10/2026 06:21:28 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='用户分类 (main)' increment-value='%null%' refresh-type='create' rows-inserted='3' timestamp-start='2026-08-10 06:21:28.388' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>user_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[user_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_type</remote-alias>
+              <ordinal>0</ordinal>
+              <family>用户分类</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LROOT' />
+              <object-id>[用户分类_B4034B31A8DA420D884A058CC5F2AB1B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>user_scale</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[user_scale]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_scale</remote-alias>
+              <ordinal>1</ordinal>
+              <family>用户分类</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[用户分类_B4034B31A8DA420D884A058CC5F2AB1B]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.901053' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.0989474' show-structure='true' user-set-layout-v2='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='用户分类' id='用户分类_B4034B31A8DA420D884A058CC5F2AB1B'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.161at8404jt4wb11vbtc20m3hvjj' name='用户分类' table='[ecommerce].[main].[用户分类]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='session转化汇总 (main)' inline='true' name='federated.0sm2y1q1tz3opm1f9j9ol18kxh1q' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='local' name='duckdb_jdbc.0dmyti705uo6381azh8j812qg2i4'>
+            <connection authentication='auth-none' class='duckdb_jdbc' dbname='ecommerce' initialSQL='' one-time-sql='' schema='main' server='local' v-connection_string_file='E:\duckdb\data\ecommerce.duckdb' v-connection_string_md='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='duckdb_jdbc.0dmyti705uo6381azh8j812qg2i4' name='会话事件转化率' table='[ecommerce].[main].[会话事件转化率]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>event_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[event_type]</local-name>
+            <parent-name>[会话事件转化率]</parent-name>
+            <remote-alias>event_type</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[会话事件转化率_8FB7D7D344BF4F78B522C81F8A6A4B9B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_session_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[event_session_count]</local-name>
+            <parent-name>[会话事件转化率]</parent-name>
+            <remote-alias>event_session_count</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[会话事件转化率_8FB7D7D344BF4F78B522C81F8A6A4B9B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>session_event_conversion</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[session_event_conversion]</local-name>
+            <parent-name>[会话事件转化率]</parent-name>
+            <remote-alias>session_event_conversion</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+            <object-id>[会话事件转化率_8FB7D7D344BF4F78B522C81F8A6A4B9B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='会话事件转化率' datatype='table' name='[__tableau_internal_object_id__].[会话事件转化率_8FB7D7D344BF4F78B522C81F8A6A4B9B]' role='measure' type='quantitative' />
+      <column caption='Event Session Count' datatype='integer' name='[event_session_count]' role='measure' type='quantitative' />
+      <column caption='Event Type' datatype='string' name='[event_type]' role='dimension' type='nominal' />
+      <column caption='Session Event Conversion' datatype='real' name='[session_event_conversion]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='zh_CN' class='hyper' dbname='E:/Project/ecommerce-analysis/04_tableau/hyper/session转化汇总 (main).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='08/10/2026 07:59:31 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='session转化汇总 (main)' increment-value='%null%' refresh-type='create' rows-inserted='3' timestamp-start='2026-08-10 07:59:31.502' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>event_type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[event_type]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>event_type</remote-alias>
+              <ordinal>0</ordinal>
+              <family>会话事件转化率</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LROOT' />
+              <object-id>[会话事件转化率_8FB7D7D344BF4F78B522C81F8A6A4B9B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>event_session_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[event_session_count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>event_session_count</remote-alias>
+              <ordinal>1</ordinal>
+              <family>会话事件转化率</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[会话事件转化率_8FB7D7D344BF4F78B522C81F8A6A4B9B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>session_event_conversion</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[session_event_conversion]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>session_event_conversion</remote-alias>
+              <ordinal>2</ordinal>
+              <family>会话事件转化率</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[会话事件转化率_8FB7D7D344BF4F78B522C81F8A6A4B9B]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='会话事件转化率' id='会话事件转化率_8FB7D7D344BF4F78B522C81F8A6A4B9B'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.0dmyti705uo6381azh8j812qg2i4' name='会话事件转化率' table='[ecommerce].[main].[会话事件转化率]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='人均各事件数统计 (main)' inline='true' name='federated.0b471qw1w80xpt1075m8p1hfelon' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='local' name='duckdb_jdbc.0rljt2u1h1vwm01db2l5u0ia3bbm'>
+            <connection authentication='auth-none' class='duckdb_jdbc' dbname='ecommerce' initialSQL='' one-time-sql='' schema='main' server='local' v-connection_string_file='E:\duckdb\data\ecommerce.duckdb' v-connection_string_md='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='duckdb_jdbc.0rljt2u1h1vwm01db2l5u0ia3bbm' name='人均各事件统计' table='[ecommerce].[main].[人均各事件统计]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>event_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[event_type]</local-name>
+            <parent-name>[人均各事件统计]</parent-name>
+            <remote-alias>event_type</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <object-id>[人均各事件统计_8F7A1908C6054E5284B45C5BED40471F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_events</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_events]</local-name>
+            <parent-name>[人均各事件统计]</parent-name>
+            <remote-alias>total_events</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[人均各事件统计_8F7A1908C6054E5284B45C5BED40471F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_per_all_users</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_per_all_users]</local-name>
+            <parent-name>[人均各事件统计]</parent-name>
+            <remote-alias>avg_per_all_users</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+            <object-id>[人均各事件统计_8F7A1908C6054E5284B45C5BED40471F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_per_active_users</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_per_active_users]</local-name>
+            <parent-name>[人均各事件统计]</parent-name>
+            <remote-alias>avg_per_active_users</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+            <object-id>[人均各事件统计_8F7A1908C6054E5284B45C5BED40471F]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='人均各事件统计' datatype='table' name='[__tableau_internal_object_id__].[人均各事件统计_8F7A1908C6054E5284B45C5BED40471F]' role='measure' type='quantitative' />
+      <column caption='Avg Per Active Users' datatype='real' name='[avg_per_active_users]' role='measure' type='quantitative' />
+      <column caption='Avg Per All Users' datatype='real' name='[avg_per_all_users]' role='measure' type='quantitative' />
+      <column caption='Event Type' datatype='string' name='[event_type]' role='dimension' type='nominal' />
+      <column caption='Total Events' datatype='integer' name='[total_events]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='人均各事件统计' id='人均各事件统计_8F7A1908C6054E5284B45C5BED40471F'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.0rljt2u1h1vwm01db2l5u0ia3bbm' name='人均各事件统计' table='[ecommerce].[main].[人均各事件统计]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='用户行为类型分布 (main)' inline='true' name='federated.0p763vp0n8ol2u19qbypp1umr2g4' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='local' name='duckdb_jdbc.1jom8821yto5sl17agdsw1y9vrv4'>
+            <connection authentication='auth-none' class='duckdb_jdbc' dbname='ecommerce' initialSQL='' one-time-sql='' schema='main' server='local' v-connection_string_file='E:\duckdb\data\ecommerce.duckdb' v-connection_string_md='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='duckdb_jdbc.1jom8821yto5sl17agdsw1y9vrv4' name='用户核心指标' table='[ecommerce].[main].[用户核心指标]' type='table' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>user_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_count]</local-name>
+            <parent-name>[用户核心指标]</parent-name>
+            <remote-alias>user_count</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户核心指标_55D18937688D4765A48BBC06A8339992]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>session_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[session_count]</local-name>
+            <parent-name>[用户核心指标]</parent-name>
+            <remote-alias>session_count</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>64</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户核心指标_55D18937688D4765A48BBC06A8339992]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>session_ave</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[session_ave]</local-name>
+            <parent-name>[用户核心指标]</parent-name>
+            <remote-alias>session_ave</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户核心指标_55D18937688D4765A48BBC06A8339992]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_ave</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[event_ave]</local-name>
+            <parent-name>[用户核心指标]</parent-name>
+            <remote-alias>event_ave</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>53</precision>
+            <contains-null>true</contains-null>
+            <object-id>[用户核心指标_55D18937688D4765A48BBC06A8339992]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='用户核心指标' datatype='table' name='[__tableau_internal_object_id__].[用户核心指标_55D18937688D4765A48BBC06A8339992]' role='measure' type='quantitative' />
+      <column caption='Event Ave' datatype='real' name='[event_ave]' role='measure' type='quantitative' />
+      <column caption='Session Ave' datatype='real' name='[session_ave]' role='measure' type='quantitative' />
+      <column caption='Session Count' datatype='integer' name='[session_count]' role='measure' type='quantitative' />
+      <column caption='User Count' datatype='integer' name='[user_count]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='false' object-id='' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='zh_CN' class='hyper' dbname='E:/Project/ecommerce-analysis/04_tableau/hyper/用户行为类型分布 (main).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>user_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[user_count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>user_count</remote-alias>
+              <ordinal>0</ordinal>
+              <family>用户核心指标</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>session_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[session_count]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>session_count</remote-alias>
+              <ordinal>1</ordinal>
+              <family>用户核心指标</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>session_ave</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[session_ave]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>session_ave</remote-alias>
+              <ordinal>2</ordinal>
+              <family>用户核心指标</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>event_ave</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[event_ave]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>event_ave</remote-alias>
+              <ordinal>3</ordinal>
+              <family>用户核心指标</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='用户核心指标' id='用户核心指标_55D18937688D4765A48BBC06A8339992'>
+            <properties context=''>
+              <relation connection='duckdb_jdbc.1jom8821yto5sl17agdsw1y9vrv4' name='用户核心指标' table='[ecommerce].[main].[用户核心指标]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <edit-parameter-action caption='ParameterColorStart1' name='[Action1_5FD189C386D94D07874516C8D15323AD]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='用户访问时间热力图' />
+      <agg-type type='min' />
+      <clear-option type='do-nothing' value='i:1' />
+      <params>
+        <param name='source-field' value='[federated.1jgyc5n170m2mn1d5jyc718p0wft].[ctd:sum_event_count:qk]' />
+        <param name='target-parameter' value='[Parameters].[ColorStart]' />
+      </params>
+    </edit-parameter-action>
+  </actions>
+  <worksheets>
+    <worksheet name='会话事件转化率'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='session转化汇总 (main)' name='federated.0sm2y1q1tz3opm1f9j9ol18kxh1q' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0sm2y1q1tz3opm1f9j9ol18kxh1q'>
+            <column caption='Event Type' datatype='string' name='[event_type]' role='dimension' type='nominal' />
+            <column-instance column='[event_type]' derivation='None' name='[none:event_type:nk]' pivot='key' type='nominal' />
+            <column caption='Session Event Conversion' datatype='real' name='[session_event_conversion]' role='measure' type='quantitative' />
+            <column-instance column='[session_event_conversion]' derivation='Sum' name='[sum:session_event_conversion:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+            <format attr='text-orientation' data-class='subtotal' value='0' />
+            <format attr='vertical-align' data-class='subtotal' value='top' />
+            <format attr='text-format' field='[federated.0sm2y1q1tz3opm1f9j9ol18kxh1q].[sum:session_event_conversion:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' field='[federated.0sm2y1q1tz3opm1f9j9ol18kxh1q].[none:event_type:nk]' value='center' />
+            <format attr='vertical-align' field='[federated.0sm2y1q1tz3opm1f9j9ol18kxh1q].[none:event_type:nk]' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+            <encodings>
+              <text column='[federated.0sm2y1q1tz3opm1f9j9ol18kxh1q].[sum:session_event_conversion:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0sm2y1q1tz3opm1f9j9ol18kxh1q].[none:event_type:nk]</cols>
+      </table>
+      <simple-id uuid='{7808746B-74F7-4C59-9C35-7D069D005E72}' />
+    </worksheet>
+    <worksheet name='全局人均事件次数'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='人均各事件数统计 (main)' name='federated.0b471qw1w80xpt1075m8p1hfelon' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0b471qw1w80xpt1075m8p1hfelon'>
+            <column caption='Avg Per All Users' datatype='real' name='[avg_per_all_users]' role='measure' type='quantitative' />
+            <column caption='Event Type' datatype='string' name='[event_type]' role='dimension' type='nominal' />
+            <column-instance column='[event_type]' derivation='None' name='[none:event_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[avg_per_all_users]' derivation='Sum' name='[sum:avg_per_all_users:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.0b471qw1w80xpt1075m8p1hfelon].[none:event_type:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;view&quot;</bucket>
+              <bucket>&quot;cart&quot;</bucket>
+              <bucket>&quot;purchase&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0b471qw1w80xpt1075m8p1hfelon].[sum:avg_per_all_users:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0b471qw1w80xpt1075m8p1hfelon].[sum:avg_per_all_users:qk]</rows>
+        <cols>[federated.0b471qw1w80xpt1075m8p1hfelon].[none:event_type:nk]</cols>
+      </table>
+      <simple-id uuid='{27EF133B-9559-4D82-8337-152AA20C5978}' />
+    </worksheet>
+    <worksheet name='参与用户人均事件次数'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='人均各事件数统计 (main)' name='federated.0b471qw1w80xpt1075m8p1hfelon' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0b471qw1w80xpt1075m8p1hfelon'>
+            <column caption='Avg Per Active Users' datatype='real' name='[avg_per_active_users]' role='measure' type='quantitative' />
+            <column caption='Event Type' datatype='string' name='[event_type]' role='dimension' type='nominal' />
+            <column-instance column='[event_type]' derivation='None' name='[none:event_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[avg_per_active_users]' derivation='Sum' name='[sum:avg_per_active_users:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.0b471qw1w80xpt1075m8p1hfelon].[none:event_type:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;view&quot;</bucket>
+              <bucket>&quot;cart&quot;</bucket>
+              <bucket>&quot;purchase&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0b471qw1w80xpt1075m8p1hfelon].[sum:avg_per_active_users:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0b471qw1w80xpt1075m8p1hfelon].[sum:avg_per_active_users:qk]</rows>
+        <cols>[federated.0b471qw1w80xpt1075m8p1hfelon].[none:event_type:nk]</cols>
+      </table>
+      <simple-id uuid='{31338BF1-D2EF-4086-B979-2CEF527DEB07}' />
+    </worksheet>
+    <worksheet name='各事件数量'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='用户行为类型分布 (main)' name='federated.0p763vp0n8ol2u19qbypp1umr2g4' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{AA9EBBAD-E3B5-4BE4-8064-6A5BD4B65695}' />
+    </worksheet>
+    <worksheet name='工作表 12'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='用户行为类型分布 (main)' name='federated.0p763vp0n8ol2u19qbypp1umr2g4' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='8' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{4237DDF7-3352-46DE-8B39-89930B1EC85B}' />
+    </worksheet>
+    <worksheet name='用户核心指标-1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_assort (main)' name='federated.0wl339s1afsmhh16keg4y1oohu6f' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wl339s1afsmhh16keg4y1oohu6f'>
+            <column caption='Event Ave' datatype='real' name='[event_ave]' role='measure' type='quantitative' />
+            <column-instance column='[event_ave]' derivation='Sum' name='[sum:event_ave:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0wl339s1afsmhh16keg4y1oohu6f].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <slices>
+            <column>[federated.0wl339s1afsmhh16keg4y1oohu6f].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0wl339s1afsmhh16keg4y1oohu6f].[sum:event_ave:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>平均事件次数&#10;&lt;</run>
+                <run>[federated.0wl339s1afsmhh16keg4y1oohu6f].[sum:event_ave:qk]</run>
+                <run>&gt;</run>
+                <run>Æ&#10;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{87105660-DB78-4620-8053-3394834B0073}' />
+    </worksheet>
+    <worksheet name='用户核心指标-2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_assort (main)' name='federated.0wl339s1afsmhh16keg4y1oohu6f' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wl339s1afsmhh16keg4y1oohu6f'>
+            <column caption='Session Ave' datatype='real' name='[session_ave]' role='measure' type='quantitative' />
+            <column-instance column='[session_ave]' derivation='Sum' name='[sum:session_ave:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0wl339s1afsmhh16keg4y1oohu6f].[sum:session_ave:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>人均会话数&#10;&lt;</run>
+                <run>[federated.0wl339s1afsmhh16keg4y1oohu6f].[sum:session_ave:qk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{2CDEA986-2021-4BB0-8AAC-4A0EB2F99007}' />
+    </worksheet>
+    <worksheet name='用户核心指标-3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_assort (main)' name='federated.0wl339s1afsmhh16keg4y1oohu6f' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wl339s1afsmhh16keg4y1oohu6f'>
+            <column caption='Session Count' datatype='integer' name='[session_count]' role='measure' type='quantitative' />
+            <column-instance column='[session_count]' derivation='Sum' name='[sum:session_count:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0wl339s1afsmhh16keg4y1oohu6f].[sum:session_count:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>会话总数&#10;&lt;</run>
+                <run>[federated.0wl339s1afsmhh16keg4y1oohu6f].[sum:session_count:qk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{549B481A-7B26-43FD-8C22-5699B37BF63D}' />
+    </worksheet>
+    <worksheet name='用户核心指标-4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_assort (main)' name='federated.0wl339s1afsmhh16keg4y1oohu6f' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wl339s1afsmhh16keg4y1oohu6f'>
+            <column-instance column='[user_count]' derivation='Sum' name='[sum:user_count:qk]' pivot='key' type='quantitative' />
+            <column caption='User Count' datatype='integer' name='[user_count]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0wl339s1afsmhh16keg4y1oohu6f].[sum:user_count:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run>用户总数&#10;&lt;</run>
+                <run>[federated.0wl339s1afsmhh16keg4y1oohu6f].[sum:user_count:qk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{042C680F-073D-4720-88A7-DCA450260523}' />
+    </worksheet>
+    <worksheet name='用户类型分布图'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='用户分类 (main)' name='federated.1fyym8j1eqmcn21avuoa801ibtbj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1fyym8j1eqmcn21avuoa801ibtbj'>
+            <column-instance column='[user_type]' derivation='None' name='[none:user_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[user_scale]' derivation='Sum' name='[pcto:sum:user_scale:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column-instance column='[user_scale]' derivation='Sum' name='[sum:user_scale:qk]' pivot='key' type='quantitative' />
+            <column caption='User Scale' datatype='integer' name='[user_scale]' role='measure' type='quantitative' />
+            <column caption='User Type' datatype='string' name='[user_type]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1fyym8j1eqmcn21avuoa801ibtbj].[pcto:sum:user_scale:qk]' value='p0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1fyym8j1eqmcn21avuoa801ibtbj].[none:user_type:nk]' />
+              <size column='[federated.1fyym8j1eqmcn21avuoa801ibtbj].[sum:user_scale:qk]' />
+              <text column='[federated.1fyym8j1eqmcn21avuoa801ibtbj].[none:user_type:nk]' />
+              <text column='[federated.1fyym8j1eqmcn21avuoa801ibtbj].[pcto:sum:user_scale:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.637182354927063' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{C7F4D429-730D-4961-8F02-17675249E6C2}' />
+    </worksheet>
+    <worksheet name='用户行为漏斗'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='用户行为类型分布 (main)' name='federated.0p763vp0n8ol2u19qbypp1umr2g4' />
+          </datasources>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{D1727AFC-A0AF-40F3-B7D2-93A9E1D30C9E}' />
+    </worksheet>
+    <worksheet name='用户访问时间热力图'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='星期x小时用户会话量' name='federated.1jgyc5n170m2mn1d5jyc718p0wft' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1jgyc5n170m2mn1d5jyc718p0wft'>
+            <column caption='Day Of Week' datatype='string' name='[day_of_week]' role='dimension' type='nominal' />
+            <column aggregation='Sum' caption='Event Hour' datatype='integer' name='[event_hour]' role='dimension' type='ordinal' />
+            <column-instance column='[day_of_week]' derivation='None' name='[none:day_of_week:nk]' pivot='key' type='nominal' />
+            <column-instance column='[event_hour]' derivation='None' name='[none:event_hour:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[sum_event_count]' derivation='Sum' name='[sum:sum_event_count:qk]' pivot='key' type='quantitative' />
+            <column aggregation='CountD' datatype='integer' datatype-customized='true' name='[sum_event_count]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='border-width' value='0' />
+            <format attr='border-style' data-class='total' value='none' />
+            <format attr='border-width' data-class='subtotal' scope='rows' value='1' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1jgyc5n170m2mn1d5jyc718p0wft].[sum:sum_event_count:qk]' palette='tableau-map-temperatur' symmetric='false' type='interpolated' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='subtotal' value='0' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+            <format attr='div-level' scope='rows' value='0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1jgyc5n170m2mn1d5jyc718p0wft].[sum:sum_event_count:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2.2872927188873291' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1jgyc5n170m2mn1d5jyc718p0wft].[none:day_of_week:nk]</rows>
+        <cols>[federated.1jgyc5n170m2mn1d5jyc718p0wft].[none:event_hour:ok]</cols>
+      </table>
+      <simple-id uuid='{0D9885C0-28D6-4DE3-85DE-5D8B503F304E}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='230'>
+    <window class='worksheet' name='用户核心指标-1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B5571864-F099-40C0-9796-D04312266BED}' />
+    </window>
+    <window class='worksheet' name='用户核心指标-2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{0D37783C-FFFA-4FF7-9EDB-DA88C3ACB473}' />
+    </window>
+    <window class='worksheet' name='用户核心指标-3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CA4B0805-020A-41C7-9D37-5C77B7A64053}' />
+    </window>
+    <window class='worksheet' name='用户核心指标-4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AEA3DF3E-05B2-4D9A-B021-2C7D3C9500F1}' />
+    </window>
+    <window class='worksheet' name='用户类型分布图'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1fyym8j1eqmcn21avuoa801ibtbj].[sum:user_scale:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.1fyym8j1eqmcn21avuoa801ibtbj].[none:user_type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{EEC596AD-DE4A-4D1F-A7C8-D63B4AE91542}' />
+    </window>
+    <window class='worksheet' name='各事件数量'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{BCF0B76A-DE43-49EC-9F60-17B7BE260747}' />
+    </window>
+    <window class='worksheet' name='用户行为漏斗'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{D98DCD6D-E589-4ABC-9DFA-1A1D11157170}' />
+    </window>
+    <window class='worksheet' name='会话事件转化率'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{30864270-4AA0-4EC9-932F-66A6993AC636}' />
+    </window>
+    <window class='worksheet' name='全局人均事件次数'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{55163891-AAB2-4AA2-8AFC-23DE9F9E2916}' />
+    </window>
+    <window class='worksheet' name='参与用户人均事件次数'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{77D30B2F-DBAF-4561-9A17-1C693603C25F}' />
+    </window>
+    <window class='worksheet' name='用户访问时间热力图'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card size='18' type='pages' />
+            <card size='29' type='filters' />
+            <card size='125' type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1jgyc5n170m2mn1d5jyc718p0wft].[sum:sum_event_count:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{C190BB8D-16C7-43F2-855F-464374C77DF9}' />
+    </window>
+    <window class='worksheet' maximized='true' name='工作表 12'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{83976E8F-1C40-4E09-BF0E-1C2C3B0D73ED}' />
+    </window>
+  </windows>
+</workbook>
